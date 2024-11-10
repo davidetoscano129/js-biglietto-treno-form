@@ -6,54 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolatore biglietto</title>
     <link rel="stylesheet" href="style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
 
 <body>
-    <header>
-        <!-- Titolo -->
+    <header class="container p-4 my-4 border bg-dark text-white text-center rounded">
         <h1>Calcola il prezzo del tuo biglietto</h1>
-        <!-- /Titolo -->
     </header>
 
-    <main>
-        <!-- Label di inserimento dati -->
-        <label for="nomeCognome" id="nomeCognome">Nome e cognome</label>
-        <br>
-        <input type="nomeCognome" id="nome">
-        <br><br>
+    <main class="container p-4 bg-dark text-white rounded mb-4">
 
-        <label for="distanza">Età</label>
-        <br>
-        <input type="età" id="età">
-        <br><br>
+        <!-- Form di inserimento dati -->
+        <form class="row g-3">
+            <div class="col-md-4">
+                <label for="nome" class="form-label">Nome e cognome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Inserisci il tuo nome">
+            </div>
 
-        <label for="distanza">Quanta distanza dovrai percorrere?</label>
-        <br>
-        <input type="distanza" id="distanza">
-        <br><br>
+            <div class="col-md-4">
+                <label for="età" class="form-label">Età</label>
+                <input type="number" class="form-control" id="età" placeholder="Inserisci la tua età">
+            </div>
 
-        <button id="calcolatoreBtn">
-            Inserisci
-        </button>
-        <br><br>
-        <!-- /Label di inserimento dati -->
+            <div class="col-md-4">
+                <label for="distanza" class="form-label">Distanza da percorrere (km)</label>
+                <input type="number" class="form-control" id="distanza" placeholder="Inserisci la distanza">
+            </div>
+
+            <!-- Bottone di invio -->
+            <div class="col-12 text-center my-3">
+                <button type="button" id="calcolatoreBtn" class="btn btn-primary">Calcola Prezzo</button>
+            </div>
+            <!-- /Bottone di invio -->
+
+        </form>
+        <!-- /Form di inserimento dati -->
 
         <!-- Prezzo finale -->
-        <label for="prezzoFinale">Il prezzo del tuo biglietto sarà:</label>
-        <br>
-        <p id="prezzoFinale">
-
-        </p>
+        <div class="text-center mt-3">
+            <h4>Prezzo del biglietto:</h4>
+            <p id="prezzoFinale" class="h4 text-success"></p>
+        </div>
         <!-- /Prezzo finale -->
 
     </main>
 
-    <footer>
+    <footer class="container my-4 p-4 bg-dark text-white rounded">
+        <h3 class="text-center mb-3">IL TUO BIGLIETTO</h3>
+
+        <!-- Biglietto -->
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>DETTAGLIO PASSEGGERI</th>
+                    <th>Offerta</th>
+                    <th>Carrozza</th>
+                    <th>Codice CP</th>
+                    <th>Costo biglietto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="nomePasseggero">Nome Cognome</td>
+                    <td id="offerta">Biglietto Standard</td>
+                    <td id="carrozza">5</td>
+                    <td id="codiceCP">92911</td>
+                    <td id="costoBiglietto">€0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /Biglietto -->
 
     </footer>
 
